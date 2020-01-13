@@ -35,10 +35,10 @@ var generatorkey = (size) =>{
     return key;
 };
 
-//routes
-// server.use(function(req, res, next) {
-//     res.status(404).send('Sorry cant find that!');
-//   });
+// routes
+server.use(function(req, res, next) {
+    res.status(404).send('Sorry cant find that!');
+  });
 server.post("/submit",(req,res,next) =>{
    
     if(validurl.isUri(req.body.url))
