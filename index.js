@@ -36,18 +36,17 @@ var generatorkey = (size) =>{
 };
 
 // routes
-server.use(function(req, res, next) {
-    res.status(404).send('Sorry cant find that!');
-  });
+
 server.post("/submit",(req,res,next) =>{
    
+    console.log(req.body)
     if(validurl.isUri(req.body.url))
     {
         var key = generatorkey(8);
         dict[key] = req.body.url
         res.json({
             status:200,
-            message:server.get("dns")+"/" + key
+            message:server.get("dns")+ "/" + key
         });
     }
     else
