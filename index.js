@@ -8,7 +8,7 @@ var os = require("os");
 
 
 //configuracion de librerias
-server.use(express.urlencoded({ extended:true}));
+server.use(express.urlencoded({ extended: true }));
 server.use(express.json());
 server.use('/css', express.static(path.join(__dirname, '/node_modules/bootstrap/dist/css')));
 server.use('/js', express.static(path.join(__dirname, '/node_modules/jquery/dist')));
@@ -16,7 +16,7 @@ server.use(express.static(path.join(__dirname,"/src")))
 server.use(express.static(path.join(__dirname,"/src/view")))
 
 //variables del sistema
-server.set("port", process.env.PORT | 600);
+server.set("port", process.env.PORT | 3000);
 server.set("dns","http://localhost:"+server.get("port"))
 
 
@@ -66,7 +66,7 @@ server.get('/:key?',(req,res)=>{
     }
     else 
     {
-        res.sendfile("view/index");
+        res.sendFile("view/index");
     }
        
     
